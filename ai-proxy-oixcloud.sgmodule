@@ -1,0 +1,72 @@
+#!name=AI 出海分流（oixCloud 专用）
+#!desc=Muse / ChatGPT / Gemini / Claude / Copilot / Grok / Perplexity 等 AI 应用，及 Apple Intelligence / Siri 相关域名走代理
+#!author=eno
+#!category=AI
+
+# 使用说明：
+# 1. 把本文件放到 GitHub 仓库，取 raw 直链，填入 Surge「模块」安装
+# 2. 本版本策略组已固定为 oixCloud 配置中的「AI Suite」，直接安装即可；如需改走其他分组，批量替换 AI Suite
+# 3. Apple Intelligence / Siri 必须走「美国等支持区域」的节点，普通中转节点可能仍不可用
+# 4. 各 App 的域名可能随版本更新变化，如某应用连不上，先检查是否为新增域名
+
+[Rule]
+# ---------- Muse（Meta AI） ----------
+DOMAIN-SUFFIX,muse.ai,AI Suite
+# api.meta.ai 为社区反馈的 Muse 接口域名，未经官方确认；如 Muse 异常可优先排查此条
+DOMAIN-SUFFIX,api.meta.ai,AI Suite
+
+# ---------- ChatGPT / OpenAI ----------
+DOMAIN-SUFFIX,chatgpt.com,AI Suite
+DOMAIN-SUFFIX,openai.com,AI Suite
+DOMAIN-SUFFIX,oaistatic.com,AI Suite
+DOMAIN-SUFFIX,oaiusercontent.com,AI Suite
+
+# ---------- Google Gemini ----------
+DOMAIN-SUFFIX,gemini.google.com,AI Suite
+DOMAIN-SUFFIX,aistudio.google.com,AI Suite
+DOMAIN-SUFFIX,generativelanguage.googleapis.com,AI Suite
+
+# ---------- Claude / Anthropic ----------
+DOMAIN-SUFFIX,anthropic.com,AI Suite
+DOMAIN-SUFFIX,claude.ai,AI Suite
+DOMAIN-SUFFIX,claudeusercontent.com,AI Suite
+
+# ---------- Microsoft Copilot ----------
+DOMAIN-SUFFIX,copilot.microsoft.com,AI Suite
+
+# ---------- xAI Grok ----------
+DOMAIN-SUFFIX,grok.com,AI Suite
+DOMAIN-SUFFIX,x.ai,AI Suite
+
+# ---------- Perplexity ----------
+DOMAIN-SUFFIX,perplexity.ai,AI Suite
+
+# ---------- Poe ----------
+DOMAIN-SUFFIX,poe.com,AI Suite
+
+# ---------- Mistral ----------
+DOMAIN-SUFFIX,mistral.ai,AI Suite
+
+# ---------- Apple Intelligence / Siri ----------
+# 参考社区维护规则（RocM301/Apple-Rule 与 CaoXiaoMann/XiaoMan 均已覆盖），走美国等支持区域节点
+DOMAIN-KEYWORD,siri,AI Suite
+DOMAIN,guzzoni.apple.com,AI Suite
+DOMAIN,mask-api.fe.apple-dns.net,AI Suite
+DOMAIN,mask-api.icloud.com,AI Suite
+DOMAIN,mask-t.apple-dns.net,AI Suite
+DOMAIN,mask.apple-dns.net,AI Suite
+DOMAIN-SUFFIX,api-siri-prod.apple.com,AI Suite
+DOMAIN-SUFFIX,apple-relay.akamaized.net,AI Suite
+DOMAIN-SUFFIX,apple-relay.apple.com,AI Suite
+DOMAIN-SUFFIX,apple-relay.cloudflare.com,AI Suite
+DOMAIN-SUFFIX,apple-relay.fastly-edge.com,AI Suite
+DOMAIN-SUFFIX,apple-relay.mask.apple-dns.net,AI Suite
+DOMAIN-SUFFIX,apps.mzstatic.com,AI Suite
+DOMAIN-SUFFIX,cp4.cloudflare.com,AI Suite
+DOMAIN-SUFFIX,gateway.icloud.com,AI Suite
+DOMAIN-SUFFIX,gspe1-ssl.ls.apple.com,AI Suite
+DOMAIN-SUFFIX,guzzoni.apple.com,AI Suite
+DOMAIN-SUFFIX,ls.apple.com,AI Suite
+DOMAIN-SUFFIX,mask-h2.icloud.com,AI Suite
+DOMAIN-SUFFIX,mask.icloud.com,AI Suite
+DOMAIN-SUFFIX,smoot.apple.com,AI Suite
