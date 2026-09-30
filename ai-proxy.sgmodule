@@ -1,0 +1,39 @@
+#!name=AI 出海分流
+#!desc=Claude / Apple Intelligence / Siri 相关域名走代理，国内直连其余流量
+#!author=eno
+#!category=AI
+
+# 使用说明：
+# 1. 把本文件放到 GitHub 仓库，取 raw 直链，填入 Surge「模块」安装
+# 2. PROXY 换成你自己的代理策略组名（如你的分组叫 HK/US，批量替换即可）
+# 3. Apple Intelligence / Siri 必须走「美国等支持区域」的节点，普通中转节点可能仍不可用
+
+[Rule]
+# ---------- Claude / Anthropic ----------
+DOMAIN-SUFFIX,anthropic.com,PROXY
+DOMAIN-SUFFIX,claude.ai,PROXY
+DOMAIN-SUFFIX,claudeusercontent.com,PROXY
+
+# ---------- Apple Intelligence / Siri ----------
+# 规则源：https://github.com/caoxiaomann/xiaoman （Rule/AppleIntelligence，2026-09-22 更新）
+DOMAIN-KEYWORD,siri,PROXY
+DOMAIN,guzzoni.apple.com,PROXY
+DOMAIN,mask-api.fe.apple-dns.net,PROXY
+DOMAIN,mask-api.icloud.com,PROXY
+DOMAIN,mask-t.apple-dns.net,PROXY
+DOMAIN,mask.apple-dns.net,PROXY
+DOMAIN-SUFFIX,api-siri-prod.apple.com,PROXY
+DOMAIN-SUFFIX,apple-relay.akamaized.net,PROXY
+DOMAIN-SUFFIX,apple-relay.apple.com,PROXY
+DOMAIN-SUFFIX,apple-relay.cloudflare.com,PROXY
+DOMAIN-SUFFIX,apple-relay.fastly-edge.com,PROXY
+DOMAIN-SUFFIX,apple-relay.mask.apple-dns.net,PROXY
+DOMAIN-SUFFIX,apps.mzstatic.com,PROXY
+DOMAIN-SUFFIX,cp4.cloudflare.com,PROXY
+DOMAIN-SUFFIX,gateway.icloud.com,PROXY
+DOMAIN-SUFFIX,gspe1-ssl.ls.apple.com,PROXY
+DOMAIN-SUFFIX,guzzoni.apple.com,PROXY
+DOMAIN-SUFFIX,ls.apple.com,PROXY
+DOMAIN-SUFFIX,mask-h2.icloud.com,PROXY
+DOMAIN-SUFFIX,mask.icloud.com,PROXY
+DOMAIN-SUFFIX,smoot.apple.com,PROXY
