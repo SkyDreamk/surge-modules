@@ -1,5 +1,5 @@
 #!name=AI 出海分流
-#!desc=Claude / Apple Intelligence / Siri 相关域名走代理，国内直连其余流量
+#!desc=Muse / ChatGPT / Gemini / Claude / Copilot / Grok / Perplexity 等 AI 应用，及 Apple Intelligence / Siri 相关域名走代理
 #!author=eno
 #!category=AI
 
@@ -7,15 +7,48 @@
 # 1. 把本文件放到 GitHub 仓库，取 raw 直链，填入 Surge「模块」安装
 # 2. PROXY 换成你自己的代理策略组名（如你的分组叫 HK/US，批量替换即可）
 # 3. Apple Intelligence / Siri 必须走「美国等支持区域」的节点，普通中转节点可能仍不可用
+# 4. 各 App 的域名可能随版本更新变化，如某应用连不上，先检查是否为新增域名
 
 [Rule]
+# ---------- Muse（Meta AI） ----------
+DOMAIN-SUFFIX,muse.ai,PROXY
+# api.meta.ai 为社区反馈的 Muse 接口域名，未经官方确认；如 Muse 异常可优先排查此条
+DOMAIN-SUFFIX,api.meta.ai,PROXY
+
+# ---------- ChatGPT / OpenAI ----------
+DOMAIN-SUFFIX,chatgpt.com,PROXY
+DOMAIN-SUFFIX,openai.com,PROXY
+DOMAIN-SUFFIX,oaistatic.com,PROXY
+DOMAIN-SUFFIX,oaiusercontent.com,PROXY
+
+# ---------- Google Gemini ----------
+DOMAIN-SUFFIX,gemini.google.com,PROXY
+DOMAIN-SUFFIX,aistudio.google.com,PROXY
+DOMAIN-SUFFIX,generativelanguage.googleapis.com,PROXY
+
 # ---------- Claude / Anthropic ----------
 DOMAIN-SUFFIX,anthropic.com,PROXY
 DOMAIN-SUFFIX,claude.ai,PROXY
 DOMAIN-SUFFIX,claudeusercontent.com,PROXY
 
+# ---------- Microsoft Copilot ----------
+DOMAIN-SUFFIX,copilot.microsoft.com,PROXY
+
+# ---------- xAI Grok ----------
+DOMAIN-SUFFIX,grok.com,PROXY
+DOMAIN-SUFFIX,x.ai,PROXY
+
+# ---------- Perplexity ----------
+DOMAIN-SUFFIX,perplexity.ai,PROXY
+
+# ---------- Poe ----------
+DOMAIN-SUFFIX,poe.com,PROXY
+
+# ---------- Mistral ----------
+DOMAIN-SUFFIX,mistral.ai,PROXY
+
 # ---------- Apple Intelligence / Siri ----------
-# 规则源：https://github.com/caoxiaomann/xiaoman （Rule/AppleIntelligence，2026-09-22 更新）
+# 参考社区维护规则（RocM301/Apple-Rule 与 CaoXiaoMann/XiaoMan 均已覆盖），走美国等支持区域节点
 DOMAIN-KEYWORD,siri,PROXY
 DOMAIN,guzzoni.apple.com,PROXY
 DOMAIN,mask-api.fe.apple-dns.net,PROXY
